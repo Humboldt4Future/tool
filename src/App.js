@@ -33,19 +33,17 @@ function App() {
         <img className={classes.image} src={logo} alt="logo" height="60"/>
       </AppBar>
       <Grow in>
-        <Container>
-          <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
-            <Grid item>
-              <Entries setCurrentId={setCurrentId}/>
-            </Grid>
-            <Grid item>
-              <Form currentId={currentId} setCurrentId={setCurrentId}/>
-            </Grid>
-            <Grid item>
-              <Intro/>
-            </Grid>
+        <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid item>
+            <Intro/>
           </Grid>
-        </Container>
+          <Grid item>
+            <Form currentId={currentId} setCurrentId={setCurrentId}/>
+          </Grid>
+          <Grid item>
+            <Entries setCurrentId={setCurrentId}/>
+          </Grid>
+        </Grid>
       </Grow>
     </Container>
   );

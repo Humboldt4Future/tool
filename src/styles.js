@@ -16,6 +16,6 @@ export default makeStyles(() => ({
         marginLeft: '15px',
     },
     mainContainer: {
-        flexDirection: "column-reverse",
+        flexDirection: "column",
     }
 }));
