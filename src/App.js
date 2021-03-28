@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { Container, AppBar, Typography, Grow, Grid, Box } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import logo from './images/h4f.png';
 import { getPosts } from './actions/posts';
@@ -20,10 +20,17 @@ function App() {
   return (
     <Container maxwidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">
-          Humboldt4Future
-        </Typography>
-        <img className={classes.image} src={logo} alt="icon" height="60"/>
+      <Box display={{xs: 'none', sm: 'block'}}>
+          <Typography className={classes.heading} variant="h2" align="center">
+            Humboldt4Future
+          </Typography>
+        </Box>
+        <Box display={{xs: 'block', sm: 'none'}}>
+          <Typography className={classes.heading} variant="h2" align="center">
+            H4F
+          </Typography>
+        </Box>
+        <img className={classes.image} src={logo} alt="logo" height="60"/>
       </AppBar>
       <Grow in>
         <Container>
