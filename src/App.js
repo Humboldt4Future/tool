@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid, Box } from '@material-ui/core';
+import { Container, Paper, Typography, Grow, Grid, Box } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import logo from './images/h4f.png';
 import { getEntries } from './actions/entries.js';
@@ -19,21 +19,23 @@ function App() {
 
   return (
     <Container maxwidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-      <Box display={{xs: 'none', sm: 'block'}}>
-          <Typography className={classes.heading} variant="h2" align="center">
-            Humboldt4Future
-          </Typography>
-        </Box>
-        <Box display={{xs: 'block', sm: 'none'}}>
-          <Typography className={classes.heading} variant="h2" align="center">
-            H4F
-          </Typography>
-        </Box>
-        <img className={classes.image} src={logo} alt="logo" height="60"/>
-      </AppBar>
       <Grow in>
         <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid item>
+            <Paper className={classes.appBar}>
+              <Box display={{xs: 'none', sm: 'block'}}>
+                <Typography className={classes.heading} variant="h2" align="center">
+                  Humboldt4Future
+                </Typography>
+              </Box>
+              <Box display={{xs: 'block', sm: 'none'}}>
+                <Typography className={classes.heading} variant="h2" align="center">
+                  H4F
+                </Typography>
+              </Box>
+              <img className={classes.image} src={logo} alt="logo" height="60"/>
+            </Paper>
+          </Grid>
           <Grid item>
             <Intro/>
           </Grid>
