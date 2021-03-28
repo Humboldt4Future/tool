@@ -1,9 +1,9 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes.js';
 import * as api from '../api';
 
-export const getPosts = () => async (dispatch) => {
+export const getEntries = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchPosts();
+        const { data } = await api.fetchEntries();
         
         dispatch({ type: FETCH_ALL, payload: data});
     } catch (error) {
@@ -11,9 +11,9 @@ export const getPosts = () => async (dispatch) => {
     }
 }
 
-export const createPost = (post) => async (dispatch) => {
+export const createEntry = (entry) => async (dispatch) => {
     try {
-        const { data } = await api.createPost(post);
+        const { data } = await api.createEntry(entry);
 
         dispatch({ type: CREATE, payload: data});
     } catch (error) {
@@ -21,9 +21,9 @@ export const createPost = (post) => async (dispatch) => {
     }
 }
 
-export const updatePost = (id, post) => async (dispatch) => {
+export const updateEntry = (id, entry) => async (dispatch) => {
     try {
-        const { data } = await api.updatePost(id, post);
+        const { data } = await api.updateEntry(id, entry);
 
         dispatch({ type: UPDATE, payload: data});
     } catch (error) {
@@ -31,9 +31,9 @@ export const updatePost = (id, post) => async (dispatch) => {
     }
 }
 
-export const deletePost = (id, post) => async (dispatch) => {
+export const deleteEntry = (id, entry) => async (dispatch) => {
     try {
-        await api.deletePost(id);
+        await api.deleteEntry(id);
 
         dispatch({ type: DELETE, payload: id });
     } catch (error) {

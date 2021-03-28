@@ -3,23 +3,23 @@ import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import useStyles from './styles.js';
-import { createPost, updatePost } from '../../actions/posts.js';
+import { createEntry, updateEntry } from '../../actions/entries.js';
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '' });
-    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+    const [entryData, setEntryData] = useState({ creator: '', title: '', message: '', tags: '' });
+    const entry = useSelector((state) => currentId ? state.entries.find((e) => e._id === currentId) : null);
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    useEffect(() => { if(post) setPostData(post); }, [post]);
+    useEffect(() => { if(entry) setEntryData(entry); }, [entry]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if(currentId) {
-            dispatch(updatePost(currentId, postData));
+            dispatch(updateEntry(currentId, entryData));
         } else {
-            dispatch(createPost(postData));
+            dispatch(createEntry(entryData));
         }
         
         clear();
@@ -27,7 +27,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
     const clear = () => {
         setCurrentId(null);
-        setPostData({ creator: '', title: '', message: '', tags: '' });
+        setEntryData({ creator: '', title: '', message: '', tags: '' });
     }
 
     return (
@@ -39,22 +39,22 @@ const Form = ({ currentId, setCurrentId }) => {
                         once it's actually implemented you can retrieve your score later by looking up your Nickname
                     </p>
                 </Typography>
-                <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
+                <TextField name="creator" variant="outlined" label="Creator" fullWidth value={entryData.creator} onChange={(e) => setEntryData({ ...entryData, creator: e.target.value })}/>
                 <Typography className={classes.question} variant="h5">
                     Answer the first question:
                 </Typography>
-                <TextField name="title" variant="outlined" label="Answer" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
+                <TextField name="title" variant="outlined" label="Answer" fullWidth value={entryData.title} onChange={(e) => setEntryData({ ...entryData, title: e.target.value })}/>
                 <Typography className={classes.question} variant="h5">
                     Answer the second question:
                 </Typography>
-                <TextField name="message" variant="outlined" label="Answer" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
+                <TextField name="message" variant="outlined" label="Answer" fullWidth value={entryData.message} onChange={(e) => setEntryData({ ...entryData, message: e.target.value })}/>
                 <Typography className={classes.question} variant="h5">
                     Answer the last questions:
                     <p className={classes.info}>
                         Answers need to be separated by a comma
                     </p>
                 </Typography>
-                <TextField name="tags" variant="outlined" label="Answer" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
+                <TextField name="tags" variant="outlined" label="Answer" fullWidth value={entryData.tags} onChange={(e) => setEntryData({ ...entryData, tags: e.target.value.split(',') })}/>
                 <Typography className={classes.question} variant="h5">
                     <br/>
                     Sie stimmen den Geschäftsbedingungen zu

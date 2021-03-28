@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid, Box } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import logo from './images/h4f.png';
-import { getPosts } from './actions/posts';
-import Posts from './components/Posts/Posts.js';
+import { getEntries } from './actions/entries.js';
+import Entries from './components/Entries/Entries.js';
 import Form from './components/Form/Form.js';
 import Intro from './components/Intro/Intro.js';
 import useStyles from './styles.js';
@@ -14,7 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts());
+    dispatch(getEntries());
   },[currentId, dispatch]);
 
   return (
@@ -36,7 +36,7 @@ function App() {
         <Container>
           <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
             <Grid item>
-              <Posts setCurrentId={setCurrentId}/>
+              <Entries setCurrentId={setCurrentId}/>
             </Grid>
             <Grid item>
               <Form currentId={currentId} setCurrentId={setCurrentId}/>
