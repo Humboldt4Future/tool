@@ -8,7 +8,13 @@ const EntrySearch = ({ setCurrentId }) => {
     const entries = useSelector((state) => state.entries);
     const classes = useStyles();
 
+    var creator;
+
     const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+    const handleChange = (e) => {
         e.preventDefault();
     }
 
@@ -20,7 +26,7 @@ const EntrySearch = ({ setCurrentId }) => {
                         <Typography variant="h4" >
                             Geben sie hier den Namen ein, unter dem sie ihren Eintrag erstellt haben
                         </Typography>
-                        <TextField name="creator" variant="outlined" label="Creator" fullWidth value={creator} onChange={}/>
+                        <TextField name="creator" variant="outlined" label="Creator" fullWidth value={creator} onChange={handleChange}/>
                         <Button className={classes.buttonSearch} variant="contained" color="primary" size="large" type="submit" fullWidth>
                             Search
                         </Button>
