@@ -7,6 +7,7 @@ import Entries from './components/Entries/Entries.js';
 import Form from './components/Form/Form.js';
 import Intro from './components/Intro/Intro.js';
 import useStyles from './styles.js';
+import EntrySearch from './components/Entries/EntrySearch/EntrySearch';
 
 function App() {
   const [currentId, setCurrentId] = useState(null);
@@ -42,6 +43,11 @@ function App() {
           <Grid item>
             <Form currentId={currentId} setCurrentId={setCurrentId}/>
           </Grid>
+          {/*
+          <Grid item>
+            <EntrySearch/>
+          </Grid>
+          */}
           <Grid item>
             <Entries setCurrentId={setCurrentId}/>
           </Grid>

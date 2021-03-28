@@ -8,7 +8,7 @@ const Entries = ({ currentId, setCurrentId }) => {
     const entries = useSelector((state) => state.entries);
     const classes = useStyles();
 
-    console.log(entries);
+    //console.log(entries);
 
     return (
         <Grid className={classes.container} container alignItems="stretch" spacing={3}>
