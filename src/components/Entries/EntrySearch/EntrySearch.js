@@ -8,8 +8,6 @@ const EntrySearch = ({ setCurrentId }) => {
     const entries = useSelector((state) => state.entries);
     const classes = useStyles();
 
-    var creator = "Test";
-
     const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -31,7 +29,7 @@ const EntrySearch = ({ setCurrentId }) => {
             </Grid>
             <Grid item>
                 <Paper className={classes.paper}>
-                    <Typography variant="h2" id="Test">
+                    <Typography variant="h2">
                         
                     </Typography>
                 </Paper>
