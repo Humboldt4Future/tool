@@ -20,7 +20,7 @@ const EntrySearch = ({ setCurrentId }) => {
                         <Typography variant="h4" >
                             Geben sie hier den Namen ein, unter dem sie ihren Eintrag erstellt haben
                         </Typography>
-                        <TextField name="creator" variant="outlined" label="Creator" fullWidth value={creator} onChange={(e) => {creator = e.target.value;}}/>
+                        <TextField name="creator" variant="outlined" label="Creator" fullWidth value={creator} onChange={}/>
                         <Button className={classes.buttonSearch} variant="contained" color="primary" size="large" type="submit" fullWidth>
                             Search
                         </Button>
