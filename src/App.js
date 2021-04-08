@@ -33,6 +33,15 @@ function App() {
           <Grid item>
             <Entries setCurrentId={setCurrentId}/>
           </Grid>
+          <Grid item>
+            <Paper align="center">
+              <Link className={classes.link} href="https://humboldt4future.github.io/impressum/">
+                <Typography className={classes.text} variant="h5">
+                  Hier kommen sie zu unserem Impressum, auf dem auch das Impressum unserer Schule verlinkt ist
+                </Typography>
+              </Link>
+            </Paper>
+          </Grid>
         </Grid>
       </Grow>
     </Container>
