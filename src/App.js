@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grow, Grid } from '@material-ui/core';
+import { Container, Grow, Grid, Paper, Link, Typography } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { getEntries } from './actions/entries.js';
 import Entries from './components/Entries/Entries.js';
