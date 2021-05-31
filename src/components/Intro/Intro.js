@@ -1,9 +1,31 @@
 import { Typography, Paper, Button } from '@material-ui/core';
-import useStyles from './styles.js';
+import { makeStyles } from '@material-ui/core/styles';
 
-var Intro = () => {
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+        },
+    },
+    paper: {
+        padding: theme.spacing(2),
+    },
+    intro: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+    },
+    greeting: {
+        textAlign: 'center',
+    },
+    info: {
+        textAlign: 'center',
+    }
+}));
+
+export default function Intro () {
     const classes = useStyles();
-    const hide = () => {
+    function hide () {
         var paper = document.getElementById('IntroPaper');
         paper.parentNode.removeChild(paper);
     }
@@ -26,5 +48,3 @@ var Intro = () => {
         </Paper>
     );
 }
-
-export default Intro;

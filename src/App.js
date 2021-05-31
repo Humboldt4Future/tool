@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid, Paper, Link, Typography } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { getEntries } from './actions/entries.js';
-import Entries from './components/Entries/Entries.js';
 import Form from './components/Form/Form.js';
-import Form2 from './components/Form2/Form2.js';
 import Intro from './components/Intro/Intro.js';
 import useStyles from './styles.js';
 import Heading from './components/Heading/Heading.js';
@@ -29,7 +27,7 @@ function App() {
             <Intro/>
           </Grid>
           <Grid item>
-            <Form2/>
+            <Form currentId={currentId} setCurrentId={setCurrentId}/>
           </Grid>
           {/*
           <Grid item>

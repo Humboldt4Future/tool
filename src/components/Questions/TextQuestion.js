@@ -1,19 +1,20 @@
-import React from 'react';
-import { makeStyles, Typography, Grid, Slider } from '@material-ui/core';
+import React, {useState} from 'react';
+import { makeStyles, Typography, Grid, TextField } from '@material-ui/core';
 
-const SliderQuestion = ({questionText,questionContext=""}) => {
+const TextQuestion = ({questionText,questionContext=""}) => {
     const useStyles = makeStyles({
         question: {
             textAlign: 'center',
         },
-        slider: {
+        textfield: {
             maxWidth: '40%',
         }
     });
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
-    const handleSliderChange = (event, newValue) => {
+    const handleTextFieldChange = (event, newValue) => {
+        console.log(value+`\t`+newValue);
         setValue(newValue);
     }
 
@@ -23,8 +24,8 @@ const SliderQuestion = ({questionText,questionContext=""}) => {
                 {questionText}
             </Typography>
             <Grid container spacing={2} alignItems="center" justify="center">
-                <Grid item xs className={classes.slider}>
-                    <Slider value={typeof value === 'number' ? value : 0} onChange={handleSliderChange}/>
+                <Grid item xs className={classes.textfield}>
+                    <TextField value={value} onChange={handleTextFieldChange} variant="outlined"/>
                 </Grid>
                 <Grid item>
                     <Typography variant="h6">
@@ -36,4 +37,4 @@ const SliderQuestion = ({questionText,questionContext=""}) => {
     )
 }
 
-export default SliderQuestion;
+export default TextQuestion;
