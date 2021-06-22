@@ -21,6 +21,7 @@ export const createEntry = (entry) => async (dispatch) => {
     }
 }
 
+/*
 export const updateEntry = (id, entry) => async (dispatch) => {
     try {
         const { data } = await api.updateEntry(id, entry);
@@ -40,3 +41,4 @@ export const deleteEntry = (id, entry) => async (dispatch) => {
         console.log(error);
     }
 }
+*/
