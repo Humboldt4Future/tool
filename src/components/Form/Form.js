@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import useStyles from './styles.js';
 import { createEntry, updateEntry } from '../../actions/entries.js';
-import SliderQuestion from '../Questions/SliderQuestion.js';
-import TextQuestion from '../Questions/TextQuestion.js';
 
 const Form = ({ currentId, setCurrentId }) => {
     const [entryData, setEntryData] = useState({
